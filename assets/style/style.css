@@ -1,1 +1,25 @@
 /* BASIC STYLES HERE */
+
+.bg-red {
+  background-color: #e93031;
+}
+
+.bg-light-red {
+  background-color: #f8979c;
+}
+
+.width-50 {
+  width: 35%;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-20-vw {
+  width: 20vw;
+}

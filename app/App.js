@@ -1,7 +1,9 @@
-import { ValuesController } from "./Controllers/ValuesController.js";
+import { ApiPokemonController } from "./Controllers/ApiPokemonController.js";
+import { SandboxPokemonController } from "./Controllers/SandboxPokemonController.js";
 
 class App {
-  valuesController = new ValuesController();
+  sandboxPokemonController = new SandboxPokemonController()
+  apiPokemonController = new ApiPokemonController()
 }
 
 window["app"] = new App();
