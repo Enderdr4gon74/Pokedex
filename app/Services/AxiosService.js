@@ -6,7 +6,7 @@ export const SandboxServer = axios.create({
 
 // @ts-ignore
 export const PokemonServer = axios.create({
-  baseURL: 'https://pokeapi.co/',
+  baseURL: 'https://pokeapi.co',
   timeout: 2500
 })
 

@@ -41,10 +41,10 @@ export class ApiPokemon {
         <div class="bg-light-red width-75 p-2 d-flex justify-content-center">
           <div class="row bg-light p-3 width-100">
             <div class="col-6 mb-3">
-              <h2>Height: ${this.height} in</h2> 
+              <h2>Height: ${this.height} Decimeters</h2> 
             </div>
             <div class="col-6 mb-3">
-              <h2>Weight: ${this.weight}lb</h2>
+              <h2>Weight: ${this.weight} Hectograms</h2>
             </div>
             <div class="col-6">
               <h2>Types: ${types}</h2>

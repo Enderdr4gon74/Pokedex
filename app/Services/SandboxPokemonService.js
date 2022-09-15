@@ -13,17 +13,20 @@ class SandboxPokemonService {
       throw new Error('Unfortunately you do not have enough space in your PokeDex for more pokemon')
     }
     appState.apiPokemon[0].nickname = prompt("What nickname do you want to give " + appState.apiPokemon[0].name + "?")
-    const res = await SandboxServer.post(`/api/${appState.user}/pokemon`, appState.apiPokemon)
+    const res = await SandboxServer.post(`/api/${appState.user}/pokemon`, appState.apiPokemon[0])
+    console.log(res.data)
     const newPokemon = new SandboxPokemon(res.data)
+    console.log(newPokemon)
     appState.sandboxPokemon = [...appState.sandboxPokemon, newPokemon]
   }
-  async deleteSpell(id) {
+  async deletePokemon(id) {
     await SandboxServer.delete(`/api/${appState.user}/pokemon/${id}`)
     appState.sandboxPokemon = appState.sandboxPokemon.filter(p => p.id != id)
   }
   async getPokemon() {
     const res = await SandboxServer.get(`/api/${appState.user}/pokemon`)
     appState.sandboxPokemon = res.data.map(p => new SandboxPokemon(p))
+    console.log(appState.sandboxPokemon)
   }
 }
 

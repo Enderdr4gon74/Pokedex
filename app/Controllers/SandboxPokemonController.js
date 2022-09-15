@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js";
 import { SandboxServer } from "../Services/AxiosService.js";
 import { sandboxPokemonService } from "../Services/SandboxPokemonService.js";
+import { apiPokemonService } from "../Services/ApiPokemonService.js";
 import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 
@@ -28,6 +29,7 @@ function drawSandboxPokemon() {
   async addPokemon() {
     try {
       await sandboxPokemonService.addPokemon()
+      await apiPokemonService.getPokemon()
       Pop.success('Pokemon Caught')
     } catch (error) {
       console.error('[Adding Pokemon]', error)
@@ -39,7 +41,7 @@ function drawSandboxPokemon() {
     try {
       const yes = await Pop.confirm('Release this Pokemon?')
       if (!yes) { return }
-      await sandboxPokemonService.deleteSpell(id)
+      await sandboxPokemonService.deletePokemon(id)
     } catch (error) {
       console.error('[Deleting Pokemon]', error)
       Pop.error(error)

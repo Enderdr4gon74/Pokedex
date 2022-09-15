@@ -21,20 +21,24 @@ export class SandboxPokemon {
           <div class="col-3">
             <img src="${this.img}" alt="${this.name}" class="img-fluid"> <!-- image's link is sprite: front default -->
           </div>
-          <div class="col-9 d-flex gap-2 align-items-center">
+          <div class="col-9 d-flex gap-2 align-items-center justify-content-between">
             <div>
               <h4 class="text-warning">${this.name}</h4>
-              <h4 class="text-warning">${this.nickName? this.nickName:''}</h4>
             </div>
             <div>
     `
     this.types.forEach(t => template += /*html*/`
-              <p class="text-info">${t.type}</p>
+              <p class="text-info">${t.type.name}</p>
     `)
     template += /*html*/`
             </div>
-            <p class="text-success">${this.height}In ${this.weight}Lb</p>
-            <button class="btn btn-outline-danger" onclick="app.sandboxServerController.deletePokemon(${this.id})"><i class="mdi mdi-delete-forever"></i></button>
+            <div>
+              <p class="text-success">${this.height} Decimeters</p>
+              <p class="text-success">${this.weight} Hectograms</p>
+            </div>
+            <div>
+              <button class="btn btn-outline-danger" onclick="app.sandboxPokemonController.deletePokemon('${this.id}')"><i class="mdi mdi-delete-forever"></i></button>
+            </div>
           </div>
         </div>
       </div>

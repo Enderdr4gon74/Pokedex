@@ -23,3 +23,7 @@
 .width-20-vw {
   width: 20vw;
 }
+
+.width-500px {
+  width: 500px !important;
+}
